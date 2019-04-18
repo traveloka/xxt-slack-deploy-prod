@@ -1,0 +1,6 @@
+---
+- name: "Sending to slack notification"
+  local_action:
+    module: slack
+    token: "{{ api_key }}"
+    msg: "@axes-engineering {{ release_type }} `{{ service }}` from `{{ old_service_version }}, AMI ID {{ old_ami_id }}` to `{{ service_version }}, AMI ID {{ ami_id }}` {{ jira_link }} by @{{ slack }}"
